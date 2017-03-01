@@ -1,0 +1,13 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: pa-gisc
+  host: pa-gisc
+  disk_quota: 1024M
+  services:
+  - pa-gisc-cloudantNoSQLDB
+  env:
+    NODE_RED_USERNAME: ibmgisc
+    NODE_RED_PASSWORD: wqa&2ZSX
