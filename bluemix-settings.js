@@ -28,6 +28,7 @@ var settings = module.exports = {
     mqttReconnectTime: 15000,
     serialReconnectTime: 15000,
     debugMaxLength: 1000,
+	apiMaxLength: "10mb",
 
     // Add the bluemix-specific nodes in
     nodesDir: path.join(__dirname,"nodes"),
@@ -49,7 +50,9 @@ var settings = module.exports = {
     // Serve up the welcome page
     httpStatic: path.join(__dirname,"public"),
 
-    functionGlobalContext: { },
+    functionGlobalContext: { wikipedia:require('wtf_wikipedia') },
+    
+    httpNodeCors: { origin: "*", methods: ['GET','PUT','POST','DELETE'] },
 
     storageModule: require("./couchstorage")
 }
